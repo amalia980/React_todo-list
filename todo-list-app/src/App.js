@@ -42,12 +42,20 @@ function App() {
 
   return (
     <div className="App">
+      <div className='container'>
       <h1>To Do List</h1>
-      <input ref={userInput} type="text"/>
-            <button onClick={addTodo}>Add</button>
-            <button onClick={deleteTodo}>Clear</button>
-            <div>{todos.filter(todo => !todo.complete).length} left to do</div>
-      <ToDoList todos={todos} toggleTodo={toggleTodo} />
+      
+      <div>
+      <input className='user-input' ref={userInput} type="text"/>
+            <button className='input-btn' onClick={addTodo}>Add</button>
+            
+            <div className='output'>
+              <button className='clear-btn' onClick={deleteTodo}>Clear</button>
+                <div className='clear-btn'><b>{todos.filter(todo => !todo.complete).length} left to do</b></div>
+              <ToDoList todos={todos} toggleTodo={toggleTodo} />
+            </div>
+        </div>
+      </div>
     </div>
   );
 }
